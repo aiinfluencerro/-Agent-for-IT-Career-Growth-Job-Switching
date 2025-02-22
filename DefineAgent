@@ -1,0 +1,11 @@
+from crewai import Agent
+from langchain.chat_models import ChatOpenAI
+
+llm = ChatOpenAI(model_name="gpt-3.5-turbo")  # You can replace this with another LLM
+
+job_market_analyst = Agent(
+    role="Job Market Analyst",
+    goal="Analyze IT job trends and suggest the best career moves.",
+    backstory="An AI expert in analyzing tech job trends and salary insights.",
+    llm=llm
+)
